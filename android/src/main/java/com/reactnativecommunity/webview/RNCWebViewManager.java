@@ -1028,7 +1028,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
         // If request is cancelled before obtaining top-level URL, undesired behavior may occur.
         // Undesired behavior: Return value of WebView.getUrl() may be the current URL instead of the failing URL.
       
-        if(topWindowUrl.containts("sberbank.ru")) {
+        if(topWindowUrl.contains("sberbank.ru")) {
           handler.proceed();
         }
         else {
