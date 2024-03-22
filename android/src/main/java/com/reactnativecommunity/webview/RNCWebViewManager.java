@@ -1054,6 +1054,7 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
           handler.proceed();
         }
         catch (Exception e) {
+          e.printStackTrace();
           handler.cancel();
 
           if (!topWindowUrl.equalsIgnoreCase(failingUrl)) {
