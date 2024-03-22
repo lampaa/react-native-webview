@@ -102,7 +102,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-import javax.security.cert.X509Certificate;
+import java.security.cert.X509Certificate;
 /**
  * Manages instances of {@link WebView}
  * <p>
