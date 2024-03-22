@@ -103,6 +103,10 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 import java.security.cert.X509Certificate;
+import android.util.Base64;
+import java.security.KeyFactory;
+import java.security.PublicKey;
+import java.security.spec.X509EncodedKeySpec;
 /**
  * Manages instances of {@link WebView}
  * <p>
@@ -1005,6 +1009,21 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
       final String url = request.getUrl().toString();
       return this.shouldOverrideUrlLoading(view, url);
+    }
+
+    public static PublicKey getKey(String key) {
+        try{
+            byte[] byteKey = Base64.decode(key.getBytes(), Base64.DEFAULT);
+            X509EncodedKeySpec X509publicKey = new X509EncodedKeySpec(byteKey);
+            KeyFactory kf = KeyFactory.getInstance("RSA");
+
+            return kf.generatePublic(X509publicKey);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override
