@@ -109,6 +109,10 @@ import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.security.cert.CertificateFactory;
 import java.io.ByteArrayInputStream;
+import android.net.http.SslCertificate;
+import java.security.cert.Certificate;
+import android.os.Bundle;
+
 /**
  * Manages instances of {@link WebView}
  * <p>
