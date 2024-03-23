@@ -113,6 +113,8 @@ import android.net.http.SslCertificate;
 import java.security.cert.Certificate;
 import android.os.Bundle;
 
+import java.security.cert.CertificateException;
+
 /**
  * Manages instances of {@link WebView}
  * <p>
